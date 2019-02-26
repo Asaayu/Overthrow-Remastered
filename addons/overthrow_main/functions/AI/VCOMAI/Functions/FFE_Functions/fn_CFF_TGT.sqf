@@ -46,8 +46,8 @@ foreach _enemies;
 	_HQFactor = 1;
 	_veh = ObjNull;
 
-	if not (isNull (assignedVehicle _CL)) then {_veh = assignedVehicle _CL};
-	if not ((vehicle _CL) == _CL) then 
+	if ! (isNull (assignedVehicle _CL)) then {_veh = assignedVehicle _CL};
+	if ! ((vehicle _CL) == _CL) then 
 	{
 		_veh = vehicle _CL;
 		if ((toLower (typeOf _veh)) in RydFFE_AllArty) then {_artFactor = 10} else {_vehFactor = 500 + (rating _veh)};
@@ -62,7 +62,7 @@ foreach _enemies;
 		{
 			_vh = vehicle _x;
 			_crowdFactor = _crowdFactor + 0.2;
-			if not (_x == _vh) then 
+			if ! (_x == _vh) then 
 			{
 				_crowdFactor = _crowdFactor + 0.2;
 				if ((toLower (typeOf _vh)) in RydFFE_AllArty) then 
@@ -104,7 +104,7 @@ foreach _targets;
 
 if (isNull _target) then 
 {
-	if not ((count _targets) == 0) then 
+	if ! ((count _targets) == 0) then 
 	{
 		_target = _targets select (floor (random (count _targets)))
 	} 

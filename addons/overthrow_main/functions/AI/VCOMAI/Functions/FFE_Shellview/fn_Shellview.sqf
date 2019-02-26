@@ -4,7 +4,7 @@ RydFFE_SVStart = false;
 
 OnMapSingleClick 
 	'
-	if not (RydFFE_SVStart) then
+	if ! (RydFFE_SVStart) then
 		{
 		RydFFE_SVStart = true; 
 		
@@ -67,13 +67,13 @@ while {RydFFE_ShellView} do
 
 			{
 			_shell = _x;
-			if not (isNil "_shell") then
+			if ! (isNil "_shell") then
 				{
-				if not (isNull _x) then
+				if ! (isNull _x) then
 					{
 					if ((typeName _x) == "OBJECT") then
 						{
-						if not (_x isKindOf "AllVehicles") then
+						if ! (_x isKindOf "AllVehicles") then
 							{
 							_shells set [(count _shells),_x]
 							}

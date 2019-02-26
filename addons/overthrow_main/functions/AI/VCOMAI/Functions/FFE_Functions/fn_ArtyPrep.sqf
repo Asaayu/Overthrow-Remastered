@@ -9,7 +9,7 @@ _amount = ceil _amount;
 		_vh = vehicle _x;
 		_handled = _vh getVariable ["RydFFEArtyAmmoHandled",false];
 		
-		if not (_handled) then
+		if ! (_handled) then
 		{
 			_vh setVariable ["RydFFEArtyAmmoHandled",true];
 			

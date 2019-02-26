@@ -16,16 +16,16 @@ _allAmmo = 0;
 
 {
 	_gp = _x; 
-	if not (isNull _gp) then
+	if ! (isNull _gp) then
 	{
-		if not (_gp getVariable ["RydFFE_BatteryBusy",false]) then
+		if ! (_gp getVariable ["RydFFE_BatteryBusy",false]) then
 		{
 			_hasAmmo = 0;
 			_checked = [];
 				
 			{
 				_vh = vehicle _x;
-				if not (_vh in _checked) then
+				if ! (_vh in _checked) then
 				{
 					_checked set [(count _checked),_vh];
 					
@@ -108,14 +108,14 @@ _allAmmo = 0;
 								_vehs = _vehs + 1
 							};
 							
-							if not (_hasAmmo < _amount) exitWith {};
-							if not (_allAmmo < _amount) exitWith {}
+							if ! (_hasAmmo < _amount) exitWith {};
+							if ! (_allAmmo < _amount) exitWith {}
 						}
 						foreach (magazinesAmmo _vh);
 					}
 				};
 
-				if not (_vehs < _amount) exitWith {}
+				if ! (_vehs < _amount) exitWith {}
 			}
 			foreach (units _gp);
 
@@ -127,12 +127,12 @@ _allAmmo = 0;
 		}
 	};
 	
-	if not (_hasAmmo < _amount) exitWith {};
-	if not (_allAmmo < _amount) exitWith {}
+	if ! (_hasAmmo < _amount) exitWith {};
+	if ! (_allAmmo < _amount) exitWith {}
 }
 foreach _arty;
 
-if not ((count _artyAv) == 0) then
+if ! ((count _artyAv) == 0) then
 {
 	_battery = _artyAv;
 	
@@ -141,7 +141,7 @@ if not ((count _artyAv) == 0) then
 	if (_ammoG in ["ILLUM","SMOKE"]) then
 	{
 		{
-			if not (isNull _x) then
+			if ! (isNull _x) then
 			{
 				_x setVariable ["RydFFE_BatteryBusy",true]
 			}
@@ -185,7 +185,7 @@ if not ((count _artyAv) == 0) then
 						_busy = 0; 
 						
 						{
-							if not (isNull _x) then
+							if ! (isNull _x) then
 							{
 								_busy = _busy + ({not ((vehicle _x) getVariable ["RydFFE_GunFree",true])} count (units _x))
 							};
@@ -206,7 +206,7 @@ if not ((count _artyAv) == 0) then
 				_busy = 0; 
 				
 				{
-					if not (isNull _x) then
+					if ! (isNull _x) then
 					{
 						_add = {not ((vehicle _x) getVariable ["RydFFE_GunFree",true])} count (units _x);
 						_busy = _busy + _add;
@@ -219,7 +219,7 @@ if not ((count _artyAv) == 0) then
 			};
 			
 			{
-				if not (isNull _x) then
+				if ! (isNull _x) then
 				{
 					_x setVariable ["RydFFE_BatteryBusy",false]
 				}

@@ -11,7 +11,7 @@ for "_i" from 1 to _CFFMissions do
 {
 	_tgt = [_knEnemies] call RYD_fnc_CFF_TGT;
 
-	if not (isNull _tgt) then
+	if ! (isNull _tgt) then
 	{
 		_ammo = "HE";
 		_amnt = _amount;
@@ -24,7 +24,7 @@ for "_i" from 1 to _CFFMissions do
 		if (_possible) then
 		{
 			{
-				if not (isNull _x) then
+				if ! (isNull _x) then
 				{
 					_x setVariable ["RydFFE_BatteryBusy",true]
 				}
@@ -46,7 +46,7 @@ for "_i" from 1 to _CFFMissions do
 			if (_possible) then
 			{
 				{
-					if not (isNull _x) then
+					if ! (isNull _x) then
 					{
 						_x setVariable ["RydFFE_BatteryBusy",true]
 					}

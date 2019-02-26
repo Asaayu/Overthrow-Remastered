@@ -111,7 +111,7 @@ while {RydFFE_Active} do
 					{
 						if ((toLower (typeOf (vehicle _x))) in _allArty) exitWith
 						{
-							if not (_gp in _artyGroups) then
+							if ! (_gp in _artyGroups) then
 							{
 								_artyGroups pushBack _gp
 							}
@@ -123,13 +123,13 @@ while {RydFFE_Active} do
 				_isCiv = false;
 				if ((toLower (faction (leader _gp))) in _civF) then {_isCiv = true};
 
-				if not (_isCiv) then
+				if ! (_isCiv) then
 				{
 					if (not (isNull _gp) && (alive (leader _gp))) then
 					{
 						if ((side _gp) in _eSides) then
 						{
-							if not (_gp in _enemies) then
+							if ! (_gp in _enemies) then
 							{
 								_enemies pushBack _gp;
 							}
@@ -138,14 +138,14 @@ while {RydFFE_Active} do
 						{
 							if ((side _gp) in _fSides) then
 							{
-								if not (_gp in _friends) then
+								if ! (_gp in _friends) then
 								{
 									_friends pushBack _gp;
 									if ((toLower (typeOf (leader _x))) in RydFFE_FOClass) then
 									{
 										if ((count RydFFE_FO) > 0) then
 										{
-											if not (_gp in RydFFE_FO) then
+											if ! (_gp in RydFFE_FO) then
 											{
 												RydFFE_FO pushBack _gp
 											}
@@ -166,13 +166,13 @@ while {RydFFE_Active} do
 					_eVeh = vehicle _x;
 
 					{
-						if not ((toLower (faction (leader _x))) in _civF) then
+						if ! ((toLower (faction (leader _x))) in _civF) then
 						{
 							if (((count RydFFE_FO) == 0) or (_x in RydFFE_FO)) then
 							{
 								if ((_x knowsAbout _eVeh) >= 0.05) then
 								{
-									if not (_eVeh in _knEnemies) then
+									if ! (_eVeh in _knEnemies) then
 									{
 										_eVeh setVariable ["RydFFE_MyFO",(leader _x)];
 										_knEnemies pushBack _eVeh
@@ -192,7 +192,7 @@ while {RydFFE_Active} do
 			{
 				if ((_x isKindOf "Tank") or (_x isKindOf "Wheeled_APC")) then
 				{
-					if not (_x in _enArmor) then
+					if ! (_x in _enArmor) then
 					{
 						_enArmor pushBack _x
 					}

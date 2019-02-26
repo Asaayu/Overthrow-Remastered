@@ -6,11 +6,11 @@ _eta = -1;
 _guns = [];
 
 {
-	if not (isNull _x) then
+	if ! (isNull _x) then
 	{
 		{
 			_vh = vehicle _x;
-			if not (_vh in _guns) then
+			if ! (_vh in _guns) then
 			{
 				_shots = 0;
 				
@@ -46,7 +46,7 @@ _rest = _amount - (_perGun * _aGuns);
 			
 {
 	_shots = _x getVariable ["RydFFE_MyShots",0];
-	if not (_shots > _perGun) then
+	if ! (_shots > _perGun) then
 	{
 		_x setVariable ["RydFFE_ShotsToFire",_shots];
 		_amount = _amount - _shots;
@@ -89,7 +89,7 @@ while {(_rest > 0)} do
 if (_bad) exitWith {-1};
 		
 {
-	if not (isNull _x) then
+	if ! (isNull _x) then
 	{
 		_vh = vehicle _x;
 		
@@ -128,7 +128,7 @@ if (_bad) exitWith {-1};
 						{
 							_vh setVariable ["RydFFE_GunFree",false];
 							
-							if not ((currentMagazine _vh) in [_ammo]) then
+							if ! ((currentMagazine _vh) in [_ammo]) then
 							{
 								_vh loadMagazine [[0],currentWeapon _vh,_ammo]; 
 								
@@ -153,7 +153,7 @@ if (_bad) exitWith {-1};
 									{
 										{
 											_gun = vehicle _x;
-											if not ((toLower (typeOf _gun)) isEqualTo "uss_iowa_battleship") then
+											if ! ((toLower (typeOf _gun)) isEqualTo "uss_iowa_battleship") then
 											{
 												_gun doArtilleryFire [_pos, _ammo,(_vh getVariable ["RydFFE_ShotsToFire",1])]
 											}
@@ -191,7 +191,7 @@ if (_bad) exitWith {-1};
 foreach _guns;
 
 /*{
-	if not (isNull _x) then
+	if ! (isNull _x) then
 	{
 		{
 			(vehicle _x) setVariable ["RydFFE_GunFree",true]

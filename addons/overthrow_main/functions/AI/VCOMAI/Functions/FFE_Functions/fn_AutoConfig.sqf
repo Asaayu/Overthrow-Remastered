@@ -5,12 +5,12 @@ params ["_allArty"];
 {
 	_vh = _x;
 	
-	if not (_vh getVariable ["RydFFE_CheckedOut",false]) then
+	if ! (_vh getVariable ["RydFFE_CheckedOut",false]) then
 	{
 		_vh setVariable ["RydFFE_CheckedOut",true];
 		_typeVh = toLower (typeOf _vh);
 		
-		if not (_typeVh in _allArty) then	
+		if ! (_typeVh in _allArty) then	
 		{
 			_mags = getArtilleryAmmo [_vh];
 			
@@ -33,7 +33,7 @@ params ["_allArty"];
 					
 					if (_actHit <= 10) then
 					{
-						if not (_subM isEqualTo "") then
+						if ! (_subM isEqualTo "") then
 						{
 							_ammoC = configfile >> "CfgAmmo" >> _subM;
 							_actHit = getNumber (_ammoC >> "indirectHitRange")
@@ -66,7 +66,7 @@ params ["_allArty"];
 					
 					if (_hit <= 10) then
 					{
-						if not (_subM isEqualTo "") then
+						if ! (_subM isEqualTo "") then
 						{
 							_ammoC = configfile >> "CfgAmmo" >> _subM;
 							_hit = getNumber (_ammoC >> "indirectHit")
@@ -115,7 +115,7 @@ params ["_allArty"];
 						_ammoC = configfile >> "CfgAmmo" >> _ammo;
 						_subAmmo = _ammoC >> "subMunitionAmmo";
 						
-						if not (_subAmmo isEqualTo "") then
+						if ! (_subAmmo isEqualTo "") then
 						{
 							_ammoC = configfile >> "CfgAmmo" >> _subAmmo
 						};
