@@ -10,6 +10,7 @@ class CfgSettings {
                 class dependencies {
                     CBA_A3[] = {"cba_main", REQUIRED_CBA_VERSION, "(true)"};
                     ACE3[] = {"ace_main", REQUIRED_ACE_VERSION, "(true)"};
+                    ACEX[] = {"acex_main", REQUIRED_ACEX_VERSION, "(true)"};
                 };
             };
         };

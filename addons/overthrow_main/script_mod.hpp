@@ -45,6 +45,9 @@
 // MINIMAL required ACE3 version for the addon
 #define REQUIRED_ACE_VERSION {3,9,1}
 
+// MINIMAL required ACEX version for the addon
+#define REQUIRED_ACEX_VERSION {3,4,2}
+
 #define COMPONENT_NAME QUOTE(MOD_NAME - VERSION)
 
 #ifndef VERSION_CONFIG

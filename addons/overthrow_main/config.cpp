@@ -15,6 +15,7 @@ class CfgPatches
             "cba_jr",
 			"ace_main",
 			"ace_medical",
+			"acex_field_rations",
 			"a3_ui_f",
 			"a3_characters_f",
 			"A3_Map_Tanoabuka"
