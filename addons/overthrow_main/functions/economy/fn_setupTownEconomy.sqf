@@ -54,9 +54,9 @@ if(count _shops > (count OT_itemCategoryDefinitions)-1) then {
 		if (!(_pos in OT_allShops) && (random 100 < _chance)) then {
 			private _category =	call {
 				private _rnd = random 100;
-				if(_rnd > 70) exitWith {"Food"};
 				if(_rnd > 90) exitWith {"Surplus"};
 				if(_rnd > 80) exitWith {"Electronics"};
+				if(_rnd > 70) exitWith {"Food"};
 				if(_rnd > 60) exitWith {"Pharmacy"};
 				if(_rnd > 40) exitWith {"Clothing"};
 				"General"
