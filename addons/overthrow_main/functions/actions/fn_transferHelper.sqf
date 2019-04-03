@@ -19,12 +19,10 @@ if(_target == player) then {
 	_target = OT_warehouseTarget;
 };
 
-disableUserInput true;
 private _fromOrTo = ["to","from"] select _isToPlayer;
-format["Transferring inventory %2 %1",_toname,_fromOrTo] call OT_fnc_notifyMinor;
-[5,false] call OT_fnc_progressBar;
+format["Transferring inventory %2 %1...",_toname,_fromOrTo] call OT_fnc_notifyMinor;
+[5, false] call OT_fnc_progressBar;
 private _end = time + 5;
-
 // Dummy CBA remove calls to strip weapons and replace with non-preset types
 [_target, "Bag_Base"] call CBA_fnc_removeBackpackCargo;
 [_target, "FakeWeapon"] call CBA_fnc_removeWeaponCargo;
@@ -105,6 +103,6 @@ if(_isToPlayer && _iswarehouse) then {
 	}foreach(_target call OT_fnc_unitStock);
 };
 
-waitUntil {time > _end};
-disableUserInput false;
+waitUntil { time >= _end };
+
 "Inventory Transfer done" call OT_fnc_notifyMinor;
