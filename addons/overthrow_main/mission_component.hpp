@@ -56,4 +56,11 @@ class Params {
         texts[] =  {"None", "Players Only", "All"};
         default = 1;
     };
+    class acex_field_rations_enabled {
+        title = "ACEX Field Rations";
+        ACE_setting = 1;
+        values[] = {true, false};
+        texts[] = {"On", "Off"};
+        default = 1;
+    };
 };
